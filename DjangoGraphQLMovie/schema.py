@@ -1,10 +1,10 @@
 import graphene
-import movies.schema
+import app.schema
 
-class Query(movies.schema.query, graphene.ObjectType):
+class Query(app.schema.query, graphene.ObjectType):
 	pass
 
-class Mutation(movies.schema.Mutation, graphene.ObjectType):
+class Mutation(app.schema.Mutation, graphene.ObjectType):
 	pass
 
 
