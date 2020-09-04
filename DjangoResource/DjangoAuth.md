@@ -27,6 +27,11 @@ from django.contrib.auth import authenticate
 user = authenticate(username="deep", password="hereismynewpassword~now_u_don`t_fuck_me")
 ```
 
+## logout the user
+``` python
+from django.contrib.auth import logout
+logout(userObject)
+```
 
 ## Permissions and Authorization
 ``` python
