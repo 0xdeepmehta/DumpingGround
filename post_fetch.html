@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post in Fetch API</title>
+</head>
+<body>
+    
+    <script>
+        const url = "https://randomuser.me/api";
+        // the data we are going to send in the request
+        let data ={
+            name : "Sara"
+        }
+        // the parameter we are gonna to pass in the fetch function
+        let fetchData = {
+            method : 'POST',
+            body : data,
+            headers : new Headers() 
+        }
+
+        fetch(url, fetchData)
+        .then(console.log(response))
+    </script>
+</body>
+</html>

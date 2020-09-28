@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+  <title> Yt Search Video </title>
+  </head>
+  <body>
+    <h1>Authors</h1>
+    <ul id="authors"></ul>
+    <script>
+        function createNode(element) {
+            return document.createElement(element)
+        }
+
+        function append(parent, el) {
+            return parent.appendChild(el)
+        }
+
+        const ul = document.getElementById('authors');
+        const url = 'https://randomuser.me/api/?results=10'; 
+
+        //   send ajax
+        fetch(url)
+        .then((resp) => resp.json())
+        .then(function(data) {
+            let author = data.results
+            return author.map(function(author) {
+                let li = createNode('li'),
+                img = createNode('img'),
+                span = createNode('span');
+                img.src = author.picture.medium;
+                span.innerHTML = `${author.name.first} ${author.name.last}`;
+                append(li, img)
+                append(li, span)
+                append(ul, li)
+            })
+        })
+        .catch(function(error) {
+            console.log(error);
+            //   this is where you run code if the server return any error
+        })
+
+    </script>
+  </body>
+</html>
